@@ -125,6 +125,38 @@ LIKE CONCAT('%',#{$SELECTION$} ,'%' )
   </context>
 </template>
 ```
+#### `aut`
+##### 描述
+
+`spring` `@Autowired` 语句补全
+
+##### 效果
+
+```
+@Autowired
+private TestService testService;
+```
+##### 使用
+
+复制类名，输入`aut`，然后 `Tab`
+
+##### 模板
+
+```
+@Autowired
+private $VAR$ $VAR_HUMP$$END$;
+```
+
+```
+<template name="aut" value="@Autowired&#10;private $VAR$ $VAR_HUMP$$END$;" description="Autowired" toReformat="false" toShortenFQNames="true">
+  <variable name="VAR" expression="clipboard()" defaultValue="" alwaysStopAt="true" />
+  <variable name="VAR_HUMP" expression="camelCase(clipboard())" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_CODE" value="true" />
+  </context>
+</template>
+```
+
 ### `java`
 
 #### `ps`
